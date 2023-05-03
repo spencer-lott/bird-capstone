@@ -5,6 +5,7 @@ import { ApplicationViews } from './components/Views/ApplicationViews';
 import { Route, Routes } from "react-router-dom"
 import { NavBar } from './components/Nav/NavBar';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return <Routes>

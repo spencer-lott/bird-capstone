@@ -47,8 +47,6 @@ export const PostingsForm = () => {
                         <div className="form-group">
                             <label htmlFor="description">Description:</label>
                             <input
-                                required 
-                                autoFocus
                                 type="text"
                                 className="form-control"
                                 placeholder="Brief description"
@@ -62,27 +60,25 @@ export const PostingsForm = () => {
                                 } />
                         </div>
                     </fieldset>
-{/* 
-            <fieldset>
-                <div className="form-group">
-                <label htmlFor="date-seen">Posted on:</label>
-                <input
-                name="date-seen"
-                required 
-                autoFocus
-                type="date"
-                className="form-control"
-                value={posting.date}
-                         onChange={
-                            (event) => {
-                                const copy = {...posting}
-                                copy.date = event.target.value
-                                update(copy)
-                            }
-                        } 
-                        />
+
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">Image URL:</label>
+                            <input
+                                // required autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="img"
+                                value={posting.image}
+                                onChange={
+                                    (event) => {
+                                        const copy = {...posting}
+                                        copy.image = event.target.value
+                                        update(copy)
+                                    }
+                                } />
                         </div>
-                    </fieldset> */}
+                    </fieldset>
             
             <button 
                 className="btn btn-primary">

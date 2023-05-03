@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Sightings } from "./Sightings"
 import { useNavigate } from "react-router-dom"
+import "./Sightings.css"
 
 
 export const SightingsList = ({ searchTermState }) => {

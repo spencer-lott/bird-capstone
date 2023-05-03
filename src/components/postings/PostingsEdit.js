@@ -47,7 +47,6 @@ export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
                         <div className="form-group">
                             <label htmlFor="description">Description:</label>
                             <input
-                                required autoFocus
                                 type="text"
                                 className="form-control"
                                 placeholder="Brief description"
@@ -62,6 +61,25 @@ export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
                         </div>
                     </fieldset>
             
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">Image URL:</label>
+                            <input
+                                // required autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="img"
+                                value={posting.image}
+                                onChange={
+                                    (event) => {
+                                        const copy = {...posting}
+                                        copy.image = event.target.value
+                                        setPosting(copy)
+                                    }
+                                } />
+                        </div>
+                    </fieldset>
+
             <button 
                 className="btn btn-primary">
                 Save edits

@@ -3,7 +3,6 @@ import { PostingsEdit } from "./PostingsEdit";
 
 export const Postings = ({postingProp, currentUser, users, updatePostings }) => {
     const [showEdit, setShowEdit] = useState(false)
-    const [postings, setPostings] = useState([])
 
     const currentUserInfo = users.find(user => user.id === postingProp.userId)
 
@@ -12,9 +11,7 @@ export const Postings = ({postingProp, currentUser, users, updatePostings }) => 
         if(currentUser.id === postingProp.userId && !showEdit) {
             return <>
             <button className="editButton" onClick={() => setShowEdit(true)}>Edit</button>
-
-</>
-
+            </>
         }
     }
 
@@ -39,7 +36,14 @@ export const Postings = ({postingProp, currentUser, users, updatePostings }) => 
     return (
         !showEdit 
         ? 
-        <section className="posting" onDoubleClick={() => setShowEdit(true)} >
+        <section className="posting">
+            {
+                postingProp.image === "" 
+                ?
+                    <></>
+                :
+                <img src={postingProp.image} alt={"url doesn't work"} />
+            }
             <div>{postingProp.description} {editOrNoEdit()} {deleteOrNoDelete()}</div>
             <div>- {currentUserInfo?.fullName} {postingProp.date}</div>
         </section>

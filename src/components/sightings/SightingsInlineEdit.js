@@ -6,7 +6,8 @@ export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}
         species: sightingProp.species,
         description: sightingProp.description,
         dateSeen: sightingProp.dateSeen,
-        location: sightingProp.location
+        location: sightingProp.location,
+        image: sightingProp.image
 
     })
 
@@ -126,6 +127,24 @@ export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}
                         </div>
                     </fieldset>
 
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">Image URL:</label>
+                            <input
+                                // required autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="img"
+                                value={sighting.image}
+                                onChange={
+                                    (event) => {
+                                        const copy = {...sighting}
+                                        copy.image = event.target.value
+                                        setSighting(copy)
+                                    }
+                                } />
+                        </div>
+                    </fieldset>
             
             <button 
                 className="btn btn-primary">

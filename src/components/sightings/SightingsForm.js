@@ -7,7 +7,8 @@ export const SightingsForm = ({updateTasks}) => {
         species: "",
         description: "",
         dateSeen: "",
-        location: ""
+        location: "",
+        image: ""
 
     })
 
@@ -25,7 +26,8 @@ export const SightingsForm = ({updateTasks}) => {
         species: sighting.species,
         description: sighting.description,
         dateSeen: sighting.dateSeen,
-        location: sighting.location
+        location: sighting.location,
+        image: sighting.image
 
     }
 
@@ -123,6 +125,25 @@ export const SightingsForm = ({updateTasks}) => {
                                     (event) => {
                                         const copy = {...sighting}
                                         copy.location = event.target.value
+                                        update(copy)
+                                    }
+                                } />
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="image">Image URL:</label>
+                            <input
+                                // required autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="img"
+                                value={sighting.image}
+                                onChange={
+                                    (event) => {
+                                        const copy = {...sighting}
+                                        copy.image = event.target.value
                                         update(copy)
                                     }
                                 } />

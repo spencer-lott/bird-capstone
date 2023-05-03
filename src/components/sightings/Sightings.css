@@ -1,0 +1,26 @@
+
+.sightingCards {
+    box-shadow: 0px 12px 18px -6px rgba(0,0,0.3);
+    overflow: hidden;
+    border-radius:  20px 20px 20px 20px;
+}
+
+.sightingProp {
+    margin: 20px;
+    
+}
+
+.sightings{
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.sightings > .sightingProp {
+    flex-basis: calc(33.3333% - 40px);
+}
+
+img {
+    height: 220px;
+}
