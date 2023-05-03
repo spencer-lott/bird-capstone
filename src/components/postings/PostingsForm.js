@@ -1,0 +1,94 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+export const PostingsForm = () => {
+    const navigate = useNavigate()
+
+    const localBirdUser = localStorage.getItem("bird_user")
+    const birdUserObject = JSON.parse(localBirdUser)
+
+    const [posting, update] = useState({
+        description: "",
+        date: "",
+
+    })
+
+    const handleSaveButtonClick = (event) => {
+        event.preventDefault()
+
+    const postingToSendToAPI = {
+        userId: birdUserObject.id,
+        description: posting.description,
+        date: new Date().toISOString().split('T')[0]
+    }
+
+        fetch(`http://localhost:8088/postings`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postingToSendToAPI)
+    })
+            .then(response => response.json())
+            .then(() => {
+                navigate("/")
+            })
+    }
+
+    return (
+        <form className="postingForm"
+        onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
+        >
+
+            <h2 className="postingForm__title">New Post</h2>
+            
+
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="description">Description:</label>
+                            <input
+                                required 
+                                autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="Brief description"
+                                value={posting.description}
+                                onChange={
+                                    (event) => {
+                                        const copy = {...posting}
+                                        copy.description = event.target.value
+                                        update(copy)
+                                    }
+                                } />
+                        </div>
+                    </fieldset>
+{/* 
+            <fieldset>
+                <div className="form-group">
+                <label htmlFor="date-seen">Posted on:</label>
+                <input
+                name="date-seen"
+                required 
+                autoFocus
+                type="date"
+                className="form-control"
+                value={posting.date}
+                         onChange={
+                            (event) => {
+                                const copy = {...posting}
+                                copy.date = event.target.value
+                                update(copy)
+                            }
+                        } 
+                        />
+                        </div>
+                    </fieldset> */}
+            
+            <button 
+                className="btn btn-primary">
+                Submit post
+            </button>
+
+        </form>
+    )
+}
