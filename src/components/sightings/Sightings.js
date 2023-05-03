@@ -18,20 +18,20 @@ export const Sightings = ({sightingProp, updateSightings}) => {
             {
                 sightingProp.image === "" 
                 ?
-                <></>
+                <><Card.Img variant="top" src={"http://www.tlcchiropractic.co.za/wp-content/uploads/2019/07/cropped-Blank-White-Image.jpg"} alt={"url doesn't work"} /></>
                 :
                 <Card.Img variant="top" src={sightingProp.image} alt={"url doesn't work"} />
             }
-                <Card.Body>
-                    <Card.Title>{sightingProp.species}</Card.Title>
-                    <Card.Text>
-                    <div>{sightingProp.dateSeen}</div>
-                    <div>{sightingProp.description}</div>
-                    <div>[{sightingProp.location}]</div>
-                    </Card.Text>
+                    <Card.Body>
+                        <Card.Title>{sightingProp.species}</Card.Title>
+                        <div>
+                            <p>{sightingProp.dateSeen}</p>
+                            <p>{sightingProp.description}</p>
+                            <p>[{sightingProp.location}]</p>
+                        </div>
 
-                </Card.Body>
-            </Card>
+                    </Card.Body>
+                </Card>
 
                 </div>
             </section>

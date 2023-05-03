@@ -1,15 +1,7 @@
-import { Binoculars } from "react-bootstrap-icons"
-
+import { BinocularsFill } from "react-bootstrap-icons"
 
 export const SightingsSearch = ({ setterFunction }) => {
-    
 
-    
-
-
-
-
-    //setterFunction comes from the prop in ProductContainer.js. State is an empty string until filled. This function sets the new state when the user changes the contents of the input
     return<>
 
     <div>
@@ -20,7 +12,7 @@ export const SightingsSearch = ({ setterFunction }) => {
             setterFunction(changeEvent.target.value)
         }}
         type="text" 
-        placeholder="name of species" /><Binoculars></Binoculars>
+        placeholder="name of species" /><BinocularsFill></BinocularsFill>
     </div>
     </>
 

@@ -148,7 +148,7 @@ export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}
             
             <button 
                 className="btn btn-primary">
-                Submit Sighting
+                Save Edit
             </button>
             <footer>
             <button 
