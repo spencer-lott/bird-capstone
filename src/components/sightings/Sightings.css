@@ -1,27 +1,67 @@
 
-.sightingCards {
+.bgSightings{
+    background-image: url();
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+
+img {
+    height: 220px;
+}
+
+.sightingsWholePageContainer{
+    border: dotted yellow;
+}
+
+.searchField{
+    padding-top: 2em;
+    padding-left: 4em;
+}
+
+.searchInput{
+    width: 200px;
+    padding: .5em;
+    margin-right: .5em;
+    border-radius:  10px 10px 10px 10px;
+}
+
+.sightingsTop{
+    color: white;
+    text-align: center;
+}
+
+.sightingsHeader{
+    font-size: 5em;
+}
+
+.newSightingButton{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 7em;
+    margin-bottom: 3em;
+    background-color: transparent;
+}
+
+.sightingsCardsContainer{
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.individualSightingsCards {
+    margin: 20px;
+    display: flex;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0.3);
     overflow: hidden;
     border-radius:  20px 20px 20px 20px;
 }
 
-.sightingProp {
-    margin: 20px;
-    
+.sightingLocation {
+    text-align: end;
 }
-
-.sightings{
-    min-height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: rgb(1,68,33);
-}
-
-.sightings > .sightingProp {
-    flex-basis: calc(33.3333% - 40px);
-}
-
-img {
-    height: 220px;
+.sightingDate{
+    font-style: italic;
 }

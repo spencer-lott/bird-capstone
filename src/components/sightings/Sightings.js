@@ -9,31 +9,29 @@ export const Sightings = ({sightingProp, updateSightings}) => {
     return(
         !showEdit ?   
         <article className="grid">
-        <section className="sightingProp"
+        <section className="individualSightingsCards"
         onDoubleClick={() => setShowEdit(true)}
         >
-        <div className="sightingCards">
 
             <Card style={{ width: '18rem' }}>
             {
                 sightingProp.image === "" 
                 ?
-                <><Card.Img variant="top" src={"http://www.tlcchiropractic.co.za/wp-content/uploads/2019/07/cropped-Blank-White-Image.jpg"} alt={"url doesn't work"} /></>
+                <><Card.Img variant="top" src={"https://preview.redd.it/childhood-cartoons-roundup-road-runner-wile-e-coyote-v0-4nim8d03x4d91.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=d415635e6f4443c4538179ff93618696f1b3c645"} alt={"url doesn't work"} /></>
                 :
                 <Card.Img variant="top" src={sightingProp.image} alt={"url doesn't work"} />
             }
                     <Card.Body>
-                        <Card.Title>{sightingProp.species}</Card.Title>
+                        <Card.Title className="speciesTitle">{sightingProp.species}</Card.Title>
                         <div>
-                            <p>{sightingProp.dateSeen}</p>
+                            <p className="sightingDate">{sightingProp.dateSeen}</p>
                             <p>{sightingProp.description}</p>
-                            <p>[{sightingProp.location}]</p>
+                            <p className="sightingLocation">[{sightingProp.location}]</p>
                         </div>
 
                     </Card.Body>
                 </Card>
 
-                </div>
             </section>
         </article>
 
@@ -42,39 +40,3 @@ export const Sightings = ({sightingProp, updateSightings}) => {
     )
 
 }
-
-
-{/* <Card style={{ width: '18rem' }}>
-<Card.Img variant="top" src="holder.js/100px180" />
-<Card.Body>
-  <Card.Title>Card Title</Card.Title>
-   <Card.Text>
-    Some quick example text to build on the card title and make up the
-    bulk of the card's content.
-  </Card.Text>
-
-</Card.Body>
-</Card> */}
-
-// return(
-//     !showEdit ?   
-//     <section className="sightingProp"
-//     onDoubleClick={() => setShowEdit(true)}
-//     >
-//             <div>{sightingProp.dateSeen}</div>
-//             <div><b>{sightingProp.species}</b></div>
-
-//         {
-//             sightingProp.image === "" 
-//             ?
-//                 <></>
-//             :
-//                 <img src={sightingProp.image} alt={"url doesn't work"}/>
-//         }
-//             <div>Description: {sightingProp.description}</div>
-//             <div>Location: {sightingProp.location}</div>
-//             </section>
-
-//             :
-//             < SightingsInlineEdit sightingProp={sightingProp} updateSightings={updateSightings} setShowEdit={setShowEdit}/>
-// )

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Sightings } from "./Sightings"
 import { useNavigate } from "react-router-dom"
+import { Button } from "react-bootstrap"
 import "./Sightings.css"
 
 
@@ -39,17 +40,22 @@ export const SightingsList = ({ searchTermState }) => {
         [sightings]
     )
 
-    
+
 return <>
 
-<h2>My Sightings</h2>  
-    <button onClick={() => navigate("/sightings/create")}>Create New Sighting</button>
-    <p>(Double click to edit any of your sightings!)</p>
-      <article className="sightings">
-        {filteredSightings.map(sighting => {
-            return <Sightings key={sighting.id} sightingProp={sighting} updateSightings={setSightings}/>
-        })}
-      </article>
+        <article className="sightingsTop">
+            <h1 className="sightingsHeader">Sightings</h1>  
+                <p style={{fontStyle: "italic"}}>(Double click to edit any of your sightings!)</p>
+        </article>
+            <div className="newSightingButton">
+            <Button style={{padding: "2em"}} onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
+            </div>
+
+        <article className="sightingsCardsContainer">
+            {filteredSightings.map(sighting => {
+                return <Sightings key={sighting.id} sightingProp={sighting} updateSightings={setSightings}/>
+            })}
+        </article>
 
 
 
