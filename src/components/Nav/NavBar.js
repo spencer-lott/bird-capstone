@@ -39,7 +39,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 export const BootstrapNav = () => {
   const navigate = useNavigate()
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{position: "fixed", top: "0", left: "0", width: "100%"}}>
       <Container>
         <Navbar.Brand href="/">Bulletin Board</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

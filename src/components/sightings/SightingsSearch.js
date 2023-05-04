@@ -1,7 +1,10 @@
 import { BinocularsFill } from "react-bootstrap-icons"
 import "./Sightings.css"
+import { useNavigate } from "react-router-dom"
+import { Button } from "react-bootstrap"
 
 export const SightingsSearch = ({ setterFunction }) => {
+    const navigate = useNavigate()
 
     return<>
 
@@ -14,6 +17,9 @@ export const SightingsSearch = ({ setterFunction }) => {
         onChange={(changeEvent) => {setterFunction(changeEvent.target.value)}}
         type="text" 
         placeholder="name of species..." /><BinocularsFill style={{color: "black", fontSize: "2.25em", paddingBottom: "4px"}}></BinocularsFill>
+
+
+
     </div>
 
     </>

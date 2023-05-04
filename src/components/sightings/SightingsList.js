@@ -43,13 +43,6 @@ export const SightingsList = ({ searchTermState }) => {
 
 return <>
 
-        <article className="sightingsTop">
-            <h1 className="sightingsHeader">Sightings</h1>  
-                <p style={{fontStyle: "italic"}}>(Double click to edit any of your sightings!)</p>
-        </article>
-            <div className="newSightingButton">
-            <Button style={{padding: "2em"}} onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
-            </div>
 
         <article className="sightingsCardsContainer">
             {filteredSightings.map(sighting => {

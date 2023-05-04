@@ -1,46 +1,47 @@
 
-.bgSightings{
-    background-image: url();
-    width: 200px;
-    height: 200px;
-    background-size: cover;
+.sightingsBackground{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
 }
+
 
 img {
     height: 220px;
 }
 
-.sightingsWholePageContainer{
-    border: dotted yellow;
-}
+/* .sightingsWholePageContainer{
 
-.searchField{
-    padding-top: 2em;
-    padding-left: 4em;
-}
+} */
 
 .searchInput{
     width: 200px;
     padding: .5em;
     margin-right: .5em;
     border-radius:  10px 10px 10px 10px;
+    background-color: rgb(253,255,245);
+
+}
+
+.sightingsSearch{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-bottom: 1.5em;
 }
 
 .sightingsTop{
     color: white;
     text-align: center;
+    padding-top: 4em;
 }
 
 .sightingsHeader{
     font-size: 5em;
-}
-
-.newSightingButton{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 7em;
-    margin-bottom: 3em;
-    background-color: transparent;
 }
 
 .sightingsCardsContainer{
