@@ -48,7 +48,9 @@ export const SightingsForm = ({updateTasks}) => {
 
 
     return (
-        <form className="sightingForm" 
+        <form 
+        className="sightingForm" 
+        style={{paddingTop: "4em"}}
         onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
         >
 

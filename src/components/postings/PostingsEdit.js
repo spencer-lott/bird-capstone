@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import "./Postings.css"
 
 export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
     const [posting, setPosting] = useState({

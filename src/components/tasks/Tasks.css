@@ -1,0 +1,55 @@
+.task-page{
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-top{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+.task-header{
+    font-size: 5em; 
+}
+
+.task-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.incomplete-tasks{
+    /* border: dotted lime; */
+    width: 40%;
+
+}
+
+.incomplete-tasks-header{
+    /* border: dotted red; */
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
+.complete-tasks{
+    /* border: dotted black; */
+    width: 40%;
+}
+
+.complete-tasks-header{
+    padding-bottom: 12px;
+}
+
+.individualTasks{
+    padding: .75em;
+    border-radius:  10px 10px 10px 10px;
+
+
+}
+
+.tasksInput{
+    margin-right: 2em;
+    margin-left: 1em;
+    transform: scale(1.5);
+}

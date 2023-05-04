@@ -12,7 +12,7 @@ export const SightingsContainer = () => {
 
     return(
     <article className="sightingWholePageContainer" >
-        <img className="sightingsBackground" src="/images/cattails.jpg" alt="try again"/>
+        <img className="sightingsBackground" src="/images/evergreenForest.jpg" alt="try again"/>
 
             <article className="sightingsTop">
                 <h1 className="sightingsHeader">Sightings</h1>  
@@ -23,7 +23,10 @@ export const SightingsContainer = () => {
                 <SightingsSearch setterFunction={setSearchTerms}/>
 
                 <div className="newSightingButton">
-                    <Button style={{padding: "1.5em", backgroundColor: "transparent", transition: "all 0.3s ease-out"}} onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
+                    <Button style={{padding: "1.5em",
+                                    transition: "all 0.3s ease-out",
+                                    backgroundColor: "#355e3b"}} 
+                            onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
                 </div>
             </section>
 

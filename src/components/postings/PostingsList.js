@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Postings } from "../postings/Postings";
+import "./Postings.css"
 
 export const PostingsList = () => {
         const [postings, setPostings] = useState([])
@@ -57,7 +58,9 @@ export const PostingsList = () => {
             [] // When this array is empty, you are observing initial component state
         )
         return <>
-        <h2>List of Postings</h2>
+    
+    <main className="postingsWholeContainer" style={{marginTop: "4em"}}>
+        <h2>Bulletin Board</h2>
         <button onClick={() => navigate("/postings/create")}>New Post</button>
         <article className="postings">
             {
@@ -72,5 +75,6 @@ export const PostingsList = () => {
                 )
             }
         </article>
+    </main>
         </>
     }

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Button } from "react-bootstrap"
 
 export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
     const [task, setTask] = useState({
@@ -78,7 +79,7 @@ export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
                     <input
                     name="priority"
                         type="checkbox"
-                        className="form-control"
+                        className="form-control-check"
                         value={task.priority}
                          onChange={
                             (event) => {
@@ -93,14 +94,15 @@ export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
             
             <button 
                 className="btn btn-primary">
-                Save Edits
+                 Save Edits
             </button>
             <footer>
-            <button
+            <Button 
+                variant="danger"
                 onClick={(clickEvent) => handleDeleteTaskButton(clickEvent)}
                 className="btn btn-primary">
                 Delete
-            </button>
+            </Button>
                     </footer>
 
         </form>

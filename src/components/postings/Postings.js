@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PostingsEdit } from "./PostingsEdit";
+import "./Postings.css"
 
 export const Postings = ({postingProp, currentUser, users, updatePostings }) => {
     const [showEdit, setShowEdit] = useState(false)

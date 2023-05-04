@@ -46,10 +46,11 @@ export const TaskForm = ({updateTasks}) => {
 
     return (
         <form className="taskForm"
+        style={{paddingTop: "4em"}}
         onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
         >
 
-            <h2 className="taskForm__title">New Task</h2>
+            <h2 className="taskForm__title">New Bird</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Name:</label>
@@ -73,9 +74,9 @@ export const TaskForm = ({updateTasks}) => {
                 <div className="form-group">
                     <label htmlFor="priority">Priority:</label>
                     <input
-                    name="priority"
+                        name="priority"
                         type="checkbox"
-                        className="form-control"
+                        className="form-control-check"
                         value={task.priority}
                          onChange={
                             (event) => {

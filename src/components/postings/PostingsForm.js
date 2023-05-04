@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./Postings.css"
 
 export const PostingsForm = () => {
     const navigate = useNavigate()

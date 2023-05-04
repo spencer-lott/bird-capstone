@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Button } from "react-bootstrap"
 
 export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}) => {
     const [sighting, setSighting] = useState({
@@ -151,11 +152,12 @@ export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}
                 Save Edit
             </button>
             <footer>
-            <button 
+            <Button 
+                variant="danger"
                 onClick={(clickEvent) => handleDeleteButtonClick(clickEvent)}
                 className="btn btn-primary">
                 Delete
-            </button>
+            </Button>
                     </footer>
                     
 
