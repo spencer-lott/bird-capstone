@@ -49,7 +49,7 @@ export const BootstrapNav = () => {
             <Nav.Link href="/tasks">Watchlist</Nav.Link>
             <Nav.Link href="/postings">Bird Feed</Nav.Link>
             <NavDropdown title="Resources" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Resource 1</NavDropdown.Item>
+              <NavDropdown.Item href="https://www.allaboutbirds.org/news/">AllAboutBirds</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Resource 2
               </NavDropdown.Item>

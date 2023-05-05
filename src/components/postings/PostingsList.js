@@ -61,7 +61,7 @@ export const PostingsList = () => {
         return <>
     
     <main className="postingsWholeContainer" style={{marginTop: "3em"}}>
-    <img className="sightingsBackground" src="/images/birdSeeds.jpg" alt="try again"/>
+    <img className="sightingsBackground" src="/images/lightBirdSeeds.jpg" alt="try again"/>
         <article className="postingsTop">
             <h2 className="postingsHeader" >Bird Feed</h2>
             <Button style={{marginTop: "16px", 

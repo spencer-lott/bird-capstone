@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import { Tasks } from "./Tasks"
 import { useNavigate } from "react-router-dom"
 import "./Tasks.css"
-import { Button, ListGroup } from "react-bootstrap"
+import { Button } from "react-bootstrap"
+import { Accordion } from "react-bootstrap"
 
 
 export const TaskList = () => {
@@ -56,12 +57,18 @@ export const TaskList = () => {
                     <Tasks key={task.id} task={task} updateTasks={setTasks} />
                     ))}
               </div>
-        
               <div className="complete-tasks">
                 <h2 className="complete-tasks-header">Completed</h2>
-                {filteredCompleteTasks.map((task) => (
-                  <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
-                  ))}
+                  <Accordion style={{backgroundColor: "darkGray"}}>
+                    <Accordion.Item eventKey="0" >
+                        <Accordion.Header >Completed Watchlist</Accordion.Header>
+                        <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>                    
+                            {filteredCompleteTasks.map((task) => (
+                              <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
+                              ))}
+                        </Accordion.Body>
+                        </Accordion.Item>
+                  </Accordion>
               </div>
             </section>
 
@@ -70,3 +77,4 @@ export const TaskList = () => {
     </>
   )
 }
+
