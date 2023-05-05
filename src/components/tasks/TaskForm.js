@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 export const TaskForm = ({updateTasks}) => {
@@ -45,8 +46,9 @@ export const TaskForm = ({updateTasks}) => {
 
 
     return (
+        <div className="taskFormContainer" style={{backgroundColor: "#f2ffe8"}}>
         <form className="taskForm"
-        style={{paddingTop: "4em"}}
+        style={{width: "25%", marginLeft: "37%", paddingTop: "8%", paddingBottom: "35%"}}
         onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
         >
 
@@ -89,11 +91,16 @@ export const TaskForm = ({updateTasks}) => {
                 </div>
             </fieldset>
             
-            <button 
+            <Button
+                style={{
+                    transition: "all 0.3s ease-out",
+                    backgroundColor: "#355e3b"
+                    }} 
                 className="btn btn-primary">
                 Submit Task
-            </button>
+            </Button>
 
         </form>
+        </div>
     )
 }

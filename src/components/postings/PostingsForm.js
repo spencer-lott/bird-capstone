@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Postings.css"
+import { Button } from "react-bootstrap"
 
 export const PostingsForm = () => {
     const navigate = useNavigate()
@@ -37,8 +38,9 @@ export const PostingsForm = () => {
     }
 
     return (
+        <div className="postingFormContainer" style={{backgroundColor: "#f2ffe8"}}>
         <form className="postingForm"
-        style={{paddingTop: "4em"}}
+        style={{width: "25%", marginLeft: "37%", paddingTop: "8%", paddingBottom: "35%"}}
         onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
         >
 
@@ -82,11 +84,16 @@ export const PostingsForm = () => {
                         </div>
                     </fieldset>
             
-            <button 
+            <Button
+                style={{
+                    transition: "all 0.3s ease-out",
+                    backgroundColor: "#355e3b"
+                    }} 
                 className="btn btn-primary">
                 Submit post
-            </button>
+            </Button>
 
         </form>
+        </div>
     )
 }
