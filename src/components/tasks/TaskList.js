@@ -37,14 +37,14 @@ export const TaskList = () => {
         <article className="task-page">
           <img className="sightingsBackground" src="/images/cattails.jpg" alt="try again"/>
             <section className="task-top">
-              <h1 className="task-header" >Birds To See</h1>
+              <h1 className="task-header" >Watchlist</h1>
               <p style={{fontStyle: "italic"}}>(Double click to edit any task!)</p>
             </section>
 
             <section className="task-list">
               <div className="incomplete-tasks">
                 <div className="incomplete-tasks-header">
-                  <h2>Incomplete</h2>
+                  <h2>List</h2>
                   <Button style={{
                             transition: "all 0.3s ease-out",
                             backgroundColor: "#355e3b"
@@ -58,7 +58,7 @@ export const TaskList = () => {
               </div>
         
               <div className="complete-tasks">
-                <h2 className="complete-tasks-header">Complete</h2>
+                <h2 className="complete-tasks-header">Completed</h2>
                 {filteredCompleteTasks.map((task) => (
                   <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
                   ))}

@@ -38,6 +38,7 @@ export const PostingsForm = () => {
 
     return (
         <form className="postingForm"
+        style={{paddingTop: "4em"}}
         onSubmit={(clickEvent) => handleSaveButtonClick(clickEvent)}
         >
 

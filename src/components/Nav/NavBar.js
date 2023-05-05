@@ -41,12 +41,13 @@ export const BootstrapNav = () => {
   return (
     <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{position: "fixed", top: "0", left: "0", width: "100%"}}>
       <Container>
-        <Navbar.Brand href="/">Bulletin Board</Navbar.Brand>
+        <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/sightings">Sightings</Nav.Link>
-            <Nav.Link href="/tasks">Birds To See</Nav.Link>
+            <Nav.Link href="/tasks">Watchlist</Nav.Link>
+            <Nav.Link href="/postings">Bird Feed</Nav.Link>
             <NavDropdown title="Resources" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Resource 1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

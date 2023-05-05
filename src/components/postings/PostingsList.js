@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Postings } from "../postings/Postings";
 import "./Postings.css"
+import { Button } from "react-bootstrap";
 
 export const PostingsList = () => {
         const [postings, setPostings] = useState([])
@@ -55,13 +56,19 @@ export const PostingsList = () => {
                     setUsers(usersArray)
                 })
             },
-            [] // When this array is empty, you are observing initial component state
+            [] 
         )
         return <>
     
-    <main className="postingsWholeContainer" style={{marginTop: "4em"}}>
-        <h2>Bulletin Board</h2>
-        <button onClick={() => navigate("/postings/create")}>New Post</button>
+    <main className="postingsWholeContainer" style={{marginTop: "3em"}}>
+    <img className="sightingsBackground" src="/images/birdSeeds.jpg" alt="try again"/>
+        <article className="postingsTop">
+            <h2 className="postingsHeader" >Bird Feed</h2>
+            <Button style={{marginTop: "16px", 
+                            transition: "all 0.3s ease-out",
+                            backgroundColor: "#355e3b"}} 
+                    onClick={() => navigate("/postings/create")}>New Post</Button>
+        </article>
         <article className="postings">
             {
                 sortedPostings.map(
@@ -78,3 +85,4 @@ export const PostingsList = () => {
     </main>
         </>
     }
+

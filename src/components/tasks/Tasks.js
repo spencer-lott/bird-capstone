@@ -82,7 +82,7 @@ return (
             className="individualTasks"
             onDoubleClick={() => setShowEdit(true)}
             style={{
-                backgroundColor: task.completed ? /*gray*/ 'transparent' : task.priority ? /*rosewood*/ '#65000b' : /*Spanish Bistre*/ '#80755a',
+                backgroundColor: task.completed ? /*gray*/ '#4f7942' : task.priority ? /*rosewood*/ '#65000b' : /*Spanish Bistre*/ '#80755a',
                 color: task.priority ? "red" : "black",
                 fontWeight: task.priority ? "bold" : "550",
                 border: "solid  black 0.5px" }}

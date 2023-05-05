@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 import "./Postings.css"
+import { Button } from "react-bootstrap"
 
 export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
     const [posting, setPosting] = useState({
         userId: postingProp.userId,
         description: postingProp.description,
-        date: postingProp.date
+        date: postingProp.date,
+        image: postingProp.image
     })
 
         const handleSaveButtonClick = (event) => {
@@ -86,11 +88,12 @@ export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
                 Save edits
             </button>
             <footer>
-            <button 
+            <Button 
+                variant="danger"
                 onClick={(clickEvent) => handleDeleteButtonClick(clickEvent)}
                 className="btn btn-primary">
                 Delete
-            </button>
+            </Button>
                     </footer>
                     
 
