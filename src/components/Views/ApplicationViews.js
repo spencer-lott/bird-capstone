@@ -5,6 +5,8 @@ import { TaskForm } from "../tasks/TaskForm"
 import { SightingsContainer } from "../sightings/SightingsContainer"
 import { PostingsList } from "../postings/PostingsList"
 import { PostingsForm } from "../postings/PostingsForm"
+import {IndividualIntervalsExample} from "../home/BootstrapCarousel"
+
 
 export const ApplicationViews = () => {
 	return (
@@ -13,11 +15,12 @@ export const ApplicationViews = () => {
             <Route path="/" element={ 
 
                 <>
-
+                
                     <Outlet />
                 </>
             }>
-                <Route path="/" element={ <PostingsList /> } />
+                {/* <Route path="/" element={ <IndividualIntervalsExample /> } /> */}
+                <Route path="postings/" element={ <PostingsList /> } />
                 <Route path="postings/create" element={ <PostingsForm /> } />
                 <Route path="sightings" element={ <SightingsContainer />}/>
                 <Route path="sightings/create" element={ <SightingsForm /> } />

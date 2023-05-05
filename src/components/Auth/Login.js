@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+import { Button, Form} from "react-bootstrap";
 import "./Login.css"
 
 export const Login = () => {
@@ -27,31 +28,45 @@ export const Login = () => {
             })
     }
 
-    return (
-        <main className="container--login">
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Bird Bud</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email"
-                            value={email}
-                            onChange={evt => set(evt.target.value)}
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
-                    </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
+    return (< main className="loginContainer" style={{backgroundColor: "#f2ffe8", paddingTop: "8%", paddingBottom: "35%"}}>
+            <div id="pictureframe">
+                <div id="bird">
+                    <div id="body2"></div>
+                    <div id="body1"></div>
+                    <div id="wing-l"></div>  
+                    <div id="wing-r"></div>  
+                </div>
+                <div id="shadow"></div>
+            </div>
+
+            <Form style={{width: "25%", marginLeft: "37%" }} 
+                onSubmit={handleLogin}>
+                <h1 className="loginHeader" style={{display: "flex", justifyContent: "center", fontSize: "5em"}}>Bird Bud</h1>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email"
+                                    value={email}
+                                    onChange={evt => set(evt.target.value)} 
+                                    placeholder="Enter email"
+                                    required autoFocus />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Text style={{display: "flex", justifyContent: "flex-end"}}>
+                            <Link to="/register">Need to Register?</Link>
+                        </Form.Text>
+                    </Form.Group>
+                    <Button style={{
+                            transition: "all 0.3s ease-out",
+                            backgroundColor: "#355e3b"
+                            }}  
+                            type="submit">
+                        Login
+                    </Button>
+            </Form>
+
         </main>
     )
 }
+
+// marginTop: "8%"

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import { Tasks } from "./Tasks"
 import { useNavigate } from "react-router-dom"
+import "./Tasks.css"
+import { Button } from "react-bootstrap"
+import { Accordion } from "react-bootstrap"
 
 
 export const TaskList = () => {
@@ -31,29 +34,47 @@ export const TaskList = () => {
 
   return (
     <>
-      <article className="task-list">
+    
+        <article className="task-page">
+          <img className="sightingsBackground" src="/images/cattails.jpg" alt="try again"/>
+            <section className="task-top">
+              <h1 className="task-header" >Watchlist</h1>
+              <p style={{fontStyle: "italic"}}>(Double click to edit any task!)</p>
+            </section>
 
-       
-        <div className="incomplete-tasks">
-          <h2>Birds To See</h2>
-          <button onClick={() => navigate("/tasks/create")}>Create Bird to See</button>
+            <section className="task-list">
+              <div className="incomplete-tasks">
+                <div className="incomplete-tasks-header">
+                  <h2>List</h2>
+                  <Button style={{
+                            transition: "all 0.3s ease-out",
+                            backgroundColor: "#355e3b"
+                            }} 
+                          onClick={() => navigate("/tasks/create")}>Add bird to watch list</Button >
+                </div>
 
+                  {filteredIncompleteTasks.map((task) => (
+                    <Tasks key={task.id} task={task} updateTasks={setTasks} />
+                    ))}
+              </div>
+              <div className="complete-tasks">
+                <h2 className="complete-tasks-header">Completed</h2>
+                  <Accordion style={{backgroundColor: "darkGray"}}>
+                    <Accordion.Item eventKey="0" >
+                        <Accordion.Header >Completed Watchlist</Accordion.Header>
+                        <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>                    
+                            {filteredCompleteTasks.map((task) => (
+                              <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
+                              ))}
+                        </Accordion.Body>
+                        </Accordion.Item>
+                  </Accordion>
+              </div>
+            </section>
 
-          {filteredIncompleteTasks.map((task) => (
-            <Tasks key={task.id} task={task} updateTasks={setTasks} />
-            ))}
-
-        </div>
-        
-        <div className="complete-tasks">
-          <h2>Done</h2>
-          {filteredCompleteTasks.map((task) => (
-            <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
-            ))}
-        <p>(Double click to edit any task!)</p>
-        </div>
-
-      </article>
+        </article>
+      
     </>
   )
 }
+
