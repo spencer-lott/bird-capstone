@@ -62,11 +62,14 @@ export const PostingsList = () => {
     
     <main className="postingsWholeContainer" style={{marginTop: "3em"}}>
     <img className="sightingsBackground" src="/images/lightBirdSeeds.jpg" alt="try again"/>
+    <div className="postingsContainer">
         <article className="postingsTop">
             <h2 className="postingsHeader" >Bird Feed</h2>
-            <Button style={{marginTop: "16px", 
+            <Button style={{marginTop: "16px",
+                            marginLeft: "70%", 
                             transition: "all 0.3s ease-out",
-                            backgroundColor: "#355e3b"}} 
+                            backgroundColor: "#355e3b",
+                            border: "solid #39545f 0.5px"}} 
                     onClick={() => navigate("/postings/create")}>New Post</Button>
         </article>
         <article className="postings">
@@ -82,6 +85,7 @@ export const PostingsList = () => {
                 )
             }
         </article>
+        </div>
     </main>
         </>
     }

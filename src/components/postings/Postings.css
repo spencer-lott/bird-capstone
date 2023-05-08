@@ -1,26 +1,40 @@
 /* .postingsWholeContainer{
-
+    
 } */
+
+.postingsContainer{
+    border: solid lightgray;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+    background-color: #f2ffe8;
+}
 
 .postingsTop{
     text-align: center;
     padding-top: 2em;
+
 }
 
 .postingsHeader{
     font-size: 5em;
+    text-decoration: underline;
 }
 
 .postings{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+/* .postings{
     margin-top: 5em;
     margin-right: 30em;
     margin-left: 30em;
-}
+} */
 
 .post{
-    border-color: #355e3b ;
-    border-style: outset;
-    border-radius:  15px 15px 15px 15px;
+    border-color: lightgray ;
+    border-style: solid;
+    /* border-radius:  3px 3px 15px 15px; */
     margin: 4px;
     padding-bottom: 4px;
     background-color: whitesmoke;
@@ -32,7 +46,7 @@
     display: flex;
     padding-left: 8px;
     padding-top: 8px;
-    border-bottom: solid gray 2px;
+    border-bottom: solid lightgray 2px;
 
 }
 

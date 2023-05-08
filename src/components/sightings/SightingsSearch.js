@@ -10,7 +10,7 @@ export const SightingsSearch = ({ setterFunction }) => {
 
 
     <div className="searchField">
-        <div style={{marginLeft: "0.33em"}}>Bird Search</div>
+        <div style={{marginLeft: "0.33em", fontWeight: "bold"}}>Bird Search</div>
         <input
         className="searchInput" 
         onChange={(changeEvent) => {setterFunction(changeEvent.target.value)}}

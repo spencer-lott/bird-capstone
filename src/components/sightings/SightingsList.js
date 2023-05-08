@@ -3,6 +3,7 @@ import { Sightings } from "./Sightings"
 import { useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import "./Sightings.css"
+// import { FancyImage } from "./FancyImage"
 
 
 export const SightingsList = ({ searchTermState }) => {

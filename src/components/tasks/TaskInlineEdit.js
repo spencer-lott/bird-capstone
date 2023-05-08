@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Button } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
 
 export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
     const [task, setTask] = useState({
@@ -8,20 +7,17 @@ export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
         description: taskProp.description,
         priority: taskProp.priority,
         completed: taskProp.completed
-        // finishDate: taskProp.finishDate
 
     })
-
 
         const handleSaveButtonClick = (event) => {
             event.preventDefault()
 
-            const newTask ={
+            const editedTaskToSendToApi ={
                 userId: task.userId,
                 description: task.description,
                 priority: Boolean(task.priority),
                 completed: task.completed
-                // finishDate: task.finishDate
             }
     
             fetch(`http://localhost:8088/tasks/${taskProp.id}`, {
@@ -29,13 +25,12 @@ export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(task)
+                body: JSON.stringify(editedTaskToSendToApi)
             })
             .then(() => fetch(`http://localhost:8088/tasks`))
             .then(response => response.json())
             .then(returnedTasks => updateTasks(returnedTasks))
             .then(()=> setShowEdit(false) )
-    
     }
 
     const handleDeleteTaskButton = (event) => {
@@ -91,15 +86,16 @@ export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
                     <input
                     name="priority"
                         type="checkbox"
-                        className="form-control-check"
-                        value={task.priority}
-                         onChange={
+                        className="form-control-check"                       
+                        checked={task.priority ? true : false}
+                        onChange={
                             (event) => {
                                 const copy = {...task}
-                                copy.priority = event.target.value
+                                copy.priority = event.target.checked
                                 setTask(copy)
                             }
                          } 
+
                         />
                 </div>
             </fieldset>
