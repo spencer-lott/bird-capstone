@@ -5,7 +5,7 @@ import { Button, Form} from "react-bootstrap";
 import "./Login.css"
 
 export const Login = () => {
-    const [email, set] = useState("bigbird98@birdluver.net")
+    const [email, set] = useState("sergeantduck5@disney.org")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -58,7 +58,8 @@ export const Login = () => {
                     </Form.Group>
                     <Button style={{
                             transition: "all 0.3s ease-out",
-                            backgroundColor: "#355e3b"
+                            backgroundColor: "#355e3b",
+                            border: "solid #39545f 0.5px"
                             }}  
                             type="submit">
                         Login

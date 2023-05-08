@@ -1,0 +1,23 @@
+
+
+.notifiedLink { 
+    position:relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.box-notify { 
+	color:#fff; 
+	text-shadow:1px 1px 0px rgba(0,0,0,0.25); 
+	text-align:center; 
+	width:1.5em;
+	height:1.5em; 
+	border-radius: 50%;
+	position:absolute;
+	top:-.8em;
+	right:-1em;
+    /* font-size: 14px; */
+
+}
+
+.redBubble {background:rgb(184, 31, 31);}

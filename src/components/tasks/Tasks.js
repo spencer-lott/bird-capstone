@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { InlineEdit } from "./TaskInlineEdit"
-import { Button, ListGroupItem } from "react-bootstrap"
-import { ListGroup } from "react-bootstrap"
+import { Button } from "react-bootstrap"
+
 
 
 export const Tasks = ( {task, updateTasks} ) => {
@@ -30,7 +30,6 @@ export const Tasks = ( {task, updateTasks} ) => {
             description: task.description,
             priority: false,
             completed: completed
-            // finishDate: task.finishDate
         }
 
         return fetch(`http://localhost:8088/tasks/${task.id}`, {
@@ -85,7 +84,9 @@ return (
                 backgroundColor: task.completed ? /*gray*/ '#4f7942' : task.priority ? /*rosewood*/ '#65000b' : /*Spanish Bistre*/ '#80755a',
                 color: task.priority ? "red" : "black",
                 fontWeight: task.priority ? "bold" : "550",
-                border: "solid  black 0.5px" }}
+                border: "solid #39545f 0.5px",
+                marginBottom: "2px",
+                boxShadow: "0px 12px 18px -6px rgba(0,0,0.3)" }}
             >
                     <input className="tasksInput" type="checkbox" onChange={handleCheckboxChange} value={isChecked}  checked={isChecked} />
                     {task.description}
@@ -102,29 +103,6 @@ return (
     
 }
     
-
-
-
-
-
-
-// const deleteButton = () => {
-//     if (task.completed === true) {
-//         return <button onClick={() => {
-
-//             fetch(`http://localhost:8088/tasks/${task.id}`, {
-//                 method: "DELETE"
-//               })
-//                 .then(() => fetch(`http://localhost:8088/tasks`))
-//                 .then(response => response.json())
-//                 .then(returnedTasks => updateTasks(returnedTasks))
-        
-//         }}
-//      className="ticket__delete">Delete</button>
-//     }
-//     else {
-//         return ""
-//     }
 
 
 

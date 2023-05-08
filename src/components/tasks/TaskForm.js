@@ -104,7 +104,8 @@ export const TaskForm = () => {
             <button
                 style={{
                     transition: "all 0.3s ease-out",
-                    backgroundColor: "#355e3b"
+                    backgroundColor: "#355e3b",
+                    border: "solid #39545f 0.5px"
                     }} 
                 className="btn btn-primary">
                 Submit Task

@@ -61,7 +61,7 @@ export const Register = (props) => {
                 >
                 <h1 className="loginHeader" style={{display: "flex", justifyContent: "center", fontSize: "3em", textAlign: "end"}}>Please Register for Bird Bud</h1>
 
-                    <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Group className="mb-3" controlId="fullName">
                         <Form.Label>Full name</Form.Label>
                         <Form.Control type="name"
                                     onChange={updateCustomer} 
@@ -69,7 +69,7 @@ export const Register = (props) => {
                                     required autoFocus />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="email">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email"
                                     onChange={updateCustomer} 
@@ -80,7 +80,8 @@ export const Register = (props) => {
 
                     <Button style={{
                             transition: "all 0.3s ease-out",
-                            backgroundColor: "#355e3b"
+                            backgroundColor: "#355e3b",
+                            border: "solid #39545f 0.5px"
                             }} 
                             type="submit">
                         Register
@@ -88,7 +89,9 @@ export const Register = (props) => {
             </Form>
         </main>
     
+
     
+
         </>
     )
 }
@@ -115,3 +118,78 @@ export const Register = (props) => {
     </fieldset>
 </form>
 </main> */}
+
+
+
+//Broken Register page
+    {/* < main className="loginContainer" style={{backgroundColor: "#f2ffe8"}}>
+            <Form style={{width: "25%", marginLeft: "37%", paddingTop: "8%", paddingBottom: "35%"}} 
+                onSubmit={handleRegister}
+                >
+                <h1 className="loginHeader" style={{display: "flex", justifyContent: "center", fontSize: "3em", textAlign: "end"}}>Please Register for Bird Bud</h1>
+
+                    <Form.Group className="mb-3" controlId="formBasicName">
+                        <Form.Label>Full name</Form.Label>
+                        <Form.Control type="name"
+                                    onChange={updateCustomer} 
+                                    placeholder="Enter full name"
+                                    required autoFocus />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email"
+                                    onChange={updateCustomer} 
+                                    placeholder="Enter email"
+                                    required autoFocus />
+                    </Form.Group>
+
+
+                    <Button style={{
+                            transition: "all 0.3s ease-out",
+                            backgroundColor: "#355e3b"
+                            }} 
+                            type="submit">
+                        Register
+                    </Button>
+            </Form>
+        </main>
+     */}
+
+
+
+
+//edited broken
+         {/* < main className="loginContainer" style={{backgroundColor: "#f2ffe8"}}>
+            <form style={{width: "25%", marginLeft: "37%", paddingTop: "8%", paddingBottom: "35%"}} 
+                onSubmit={handleRegister}
+                >
+                <h1 className="loginHeader" style={{display: "flex", justifyContent: "center", fontSize: "3em", textAlign: "center"}}>Please Register for Bird Bud</h1>
+
+                    <section className="mb-3" controlId="formBasicName">
+                        <label>Full name</label>
+                        <input type="name"
+                                    onChange={updateCustomer} 
+                                    placeholder="Enter full name"
+                                    required autoFocus />
+                    </section>
+
+                    <section className="mb-3" controlId="formBasicEmail">
+                        <label>Email address</label>
+                        <input type="email"
+                                    onChange={updateCustomer} 
+                                    placeholder="Enter email"
+                                    required autoFocus />
+                    </section>
+
+
+                    <Button style={{
+                            transition: "all 0.3s ease-out",
+                            backgroundColor: "#355e3b"
+                            }} 
+                            type="submit">
+                        Register
+                    </Button>
+            </form>
+        </main> */}
+    

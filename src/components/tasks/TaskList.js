@@ -9,6 +9,7 @@ import { Accordion } from "react-bootstrap"
 export const TaskList = () => {
   const [filteredIncompleteTasks, setFilteredIncompleteTasks] = useState([])
   const [filteredCompleteTasks, setFilteredCompleteTasks] = useState([])
+  const [showEdit, setShowEdit] = useState(false)
 
   const navigate = useNavigate()
 
@@ -32,46 +33,69 @@ export const TaskList = () => {
     setFilteredCompleteTasks(personalCompleteTasks)
   }, [tasks])
 
+
+
+
+  // const DeleteAllCompletedTasks = (event) => {
+  //   event.preventDefault()
+    
+  //   fetch(`http://localhost:8088/users?_embed=tasks${birdUserObject.id}`, {
+  //     method: "DELETE"
+  //   })
+  //     .then(() => fetch(`http://localhost:8088/tasks`))
+  //     .then(response => response.json())
+  //     .then(returnedTasks => setTasks(returnedTasks))
+  //     .then(() => setShowEdit(false))
+      
+  // }
+
+
+
+
   return (
     <>
     
         <article className="task-page">
           <img className="sightingsBackground" src="/images/cattails.jpg" alt="try again"/>
-            <section className="task-top">
-              <h1 className="task-header" >Watchlist</h1>
-              <p style={{fontStyle: "italic"}}>(Double click to edit any task!)</p>
-            </section>
 
-            <section className="task-list">
-              <div className="incomplete-tasks">
-                <div className="incomplete-tasks-header">
-                  <h2>List</h2>
-                  <Button style={{
-                            transition: "all 0.3s ease-out",
-                            backgroundColor: "#355e3b"
-                            }} 
-                          onClick={() => navigate("/tasks/create")}>Add bird to watch list</Button >
-                </div>
+            <div className="task-page-container">
+                <section className="task-top">
+                  <h1 className="task-header" >Watchlist</h1>
+                  <p style={{fontStyle: "italic"}}>(Double click to edit any task!)</p>
+                </section>
 
-                  {filteredIncompleteTasks.map((task) => (
-                    <Tasks key={task.id} task={task} updateTasks={setTasks} />
-                    ))}
-              </div>
-              <div className="complete-tasks">
-                <h2 className="complete-tasks-header">Completed</h2>
-                  <Accordion style={{backgroundColor: "darkGray"}}>
-                    <Accordion.Item eventKey="0" >
-                        <Accordion.Header >Completed Watchlist</Accordion.Header>
-                        <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>                    
-                            {filteredCompleteTasks.map((task) => (
-                              <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
-                              ))}
-                        </Accordion.Body>
-                        </Accordion.Item>
-                  </Accordion>
-              </div>
-            </section>
+                <section className="task-list">
+                  <div className="incomplete-tasks">
+                    <div className="incomplete-tasks-header">
+                      <h2>List</h2>
+                      <Button style={{
+                                transition: "all 0.3s ease-out",
+                                backgroundColor: "#355e3b",
+                                border: "solid #39545f 0.5px"
+                                }} 
+                              onClick={() => navigate("/tasks/create")}>Add bird to watch list</Button >
+                    </div>
 
+                      {filteredIncompleteTasks.map((task) => (
+                        <Tasks key={task.id} task={task} updateTasks={setTasks} />
+                        ))}
+                  </div>
+                  <div className="complete-tasks">
+                    <h2 className="complete-tasks-header">Completed</h2>
+                      <Accordion style={{backgroundColor: "darkGray"}}>
+                        <Accordion.Item eventKey="0" >
+                            <Accordion.Header >Completed Watchlist</Accordion.Header>
+                            <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>                    
+                                {filteredCompleteTasks.map((task) => (
+                                  <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
+                                  ))}
+                            </Accordion.Body>
+                            </Accordion.Item>
+                      </Accordion>
+                  </div>
+                </section>
+
+            </div>
         </article>
       
     </>

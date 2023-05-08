@@ -4,6 +4,17 @@
     flex-direction: column;
 }
 
+.task-page-container{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* .task-page{
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+} */
+
 .task-top{
     padding-top: 2em;
     padding-bottom: 2em;
@@ -12,6 +23,7 @@
 
 .task-header{
     font-size: 5em; 
+    text-decoration: underline;
 }
 
 .task-list{
@@ -20,20 +32,17 @@
 }
 
 .incomplete-tasks{
-    /* border: dotted lime; */
     width: 40%;
 
 }
 
 .incomplete-tasks-header{
-    /* border: dotted red; */
     display: flex;
     justify-content: space-between;
     padding-bottom: 12px;
 }
 
 .complete-tasks{
-    /* border: dotted black; */
     width: 40%;
 }
 
@@ -53,4 +62,5 @@
     margin-right: 2em;
     margin-left: 1em;
     transform: scale(1.5);
+    cursor: pointer;
 }

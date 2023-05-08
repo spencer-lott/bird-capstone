@@ -9,12 +9,17 @@
 
 
 img {
-    height: 220px;
+    height: 300px;
 }
 
 /* .sightingsWholePageContainer{
 
 } */
+
+.sightingsMainContainer{
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
 .searchInput{
     width: 200px;
@@ -29,8 +34,8 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 6em;
-    margin-right: 6em;
+    margin-left: 3%;
+    margin-right: 3%;
     margin-bottom: 1.5em;
 }
 
@@ -41,6 +46,7 @@ img {
 
 .sightingsHeader{
     font-size: 5em;
+    text-decoration: underline;
 }
 
 .sightingsCardsContainer{
@@ -53,11 +59,17 @@ img {
 
 .individualSightingsCards {
     margin: 20px;
+    overflow: hidden;
+}
+
+/* Original */
+/* .individualSightingsCards {
+    margin: 20px;
     display: flex;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0.3);
     overflow: hidden;
     border-radius:  20px 20px 20px 20px;
-}
+} */
 
 .sightingLocation {
     text-align: end;
@@ -65,3 +77,46 @@ img {
 .sightingDate{
     font-style: italic;
 }
+
+
+/* This is all for the fancy images */
+
+.hoverImageContainer {
+	max-width: 700px;
+	margin: 24px auto 48px auto;
+}
+
+.frame {
+	text-align: center;	
+	position: relative;
+	cursor: pointer;	
+	perspective: 500px; 
+}
+.frame img {
+	width: 300px;
+	height: 300px;
+	border-radius: 10px 10px 10px 10px ;
+	box-shadow: 0px 12px 15px -6px rgba(0,0,0.3);
+    border: solid #39545f 0..25px
+}
+
+.frame .details {
+	width: 70%;
+	height: 80%;	
+	padding: 5% 8%;
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateY(90deg);
+	transform-origin: 50%;
+	background: rgba(255,255,255,0.9);	
+	opacity: 0;
+	transition: all 0.4s ease-in;
+	overflow: auto;
+}
+
+.frame:hover .details {
+	transform: translate(-50%, -50%) rotateY(0deg);
+	opacity: 1;
+} 

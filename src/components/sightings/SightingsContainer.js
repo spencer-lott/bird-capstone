@@ -13,7 +13,7 @@ export const SightingsContainer = () => {
     return(
     <article className="sightingWholePageContainer" >
         <img className="sightingsBackground" src="/images/evergreenForest.jpg" alt="try again"/>
-
+            <main className="sightingsMainContainer">
             <article className="sightingsTop">
                 <h1 className="sightingsHeader">Sightings</h1>  
                 <p style={{fontStyle: "italic"}}>(Double click to edit any of your sightings!)</p>
@@ -25,12 +25,14 @@ export const SightingsContainer = () => {
                 <div className="newSightingButton">
                     <Button style={{padding: "1.5em",
                                     transition: "all 0.3s ease-out",
-                                    backgroundColor: "#355e3b"}} 
+                                    backgroundColor: "#355e3b",
+                                    border: "solid #39545f 0.5px"}} 
                             onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
                 </div>
             </section>
 
                     <SightingsList searchTermState={searchTerms}/>
+                </main>
         </article>  
     )
 }
