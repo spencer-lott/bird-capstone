@@ -36,10 +36,9 @@ export const TaskList = () => {
 
 
 
-  // const DeleteAllCompletedTasks = (event) => {
-  //   event.preventDefault()
-    
-  //   fetch(`http://localhost:8088/users?_embed=tasks${birdUserObject.id}`, {
+  // const DeleteAllCompletedTasks = () => {
+
+  //   fetch(`http://localhost:8088/users?_embed=tasks${birdUserObject?.tasks?.id}`, {
   //     method: "DELETE"
   //   })
   //     .then(() => fetch(`http://localhost:8088/tasks`))
@@ -48,7 +47,6 @@ export const TaskList = () => {
   //     .then(() => setShowEdit(false))
       
   // }
-
 
 
 
@@ -74,7 +72,7 @@ export const TaskList = () => {
                                 border: "solid #39545f 0.5px",
                                 opacity: "0.9"
                                 }} 
-                              onClick={() => navigate("/tasks/create")}>Add bird to watch list</Button >
+                              onClick={() => navigate("/tasks/create")}>Add bird</Button >
                     </div>
 
                       {filteredIncompleteTasks.map((task) => (
@@ -87,7 +85,13 @@ export const TaskList = () => {
                         <Accordion.Item eventKey="0" >
                             <Accordion.Header >Completed Watchlist</Accordion.Header>
                             <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>
-                              <Button>Clear all</Button>                    
+                              {/* <Button variant="danger"
+                                      onClick={DeleteAllCompletedTasks} 
+                              style={{marginBottom: "5px",
+                                      transition: "all 0.3s ease-out",
+                                      border: "solid #39545f 0.5px",
+                                      backgroundColor: "red"
+                            }}>Clear all</Button>                     */}
                                 {filteredCompleteTasks.map((task) => (
                                   <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
                                   ))}

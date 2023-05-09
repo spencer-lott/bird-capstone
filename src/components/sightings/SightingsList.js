@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
 import { Sightings } from "./Sightings"
 import { useNavigate } from "react-router-dom"
-import { Button } from "react-bootstrap"
+import { OverlayTrigger, Tooltip } from "react-bootstrap"
 import "./Sightings.css"
-// import { FancyImage } from "./FancyImage"
 
 
 export const SightingsList = ({ searchTermState }) => {
@@ -43,7 +42,14 @@ export const SightingsList = ({ searchTermState }) => {
 
 
 return <>
-
+        <OverlayTrigger
+        placement="top"
+        overlay={<Tooltip>Total Bird Count</Tooltip>}
+        >
+        <article className="birdCount">
+            <section className="countNumber">{filteredSightings.length}</section>
+        </article>
+        </OverlayTrigger>
 
         <article className="sightingsCardsContainer">
             {filteredSightings.map(sighting => {
