@@ -49,6 +49,29 @@ img {
     text-decoration: underline;
 }
 
+.birdCount{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -50px;
+    
+}
+
+.countNumber{
+    background-color: #65000B;
+    border-radius: 50%;
+    font-size: 75px;
+    color: whitesmoke;
+	text-shadow:1px 1px 0px rgba(0,0,0,0.25); 
+	text-align:center; 
+	width:1.5em;
+	height:1.5em; 
+	border-radius: 50%;
+	top:-.8em;
+	right:-1em;
+}
+
 .sightingsCardsContainer{
     min-height: 100%;
     display: flex;
@@ -77,6 +100,8 @@ img {
 .sightingDate{
     font-style: italic;
 }
+
+
 
 
 /* This is all for the fancy images */
