@@ -5,6 +5,7 @@ import { TaskForm } from "../tasks/TaskForm"
 import { SightingsContainer } from "../sightings/SightingsContainer"
 import { PostingsList } from "../postings/PostingsList"
 import { PostingsForm } from "../postings/PostingsForm"
+import { Home } from "../home/Home"
 // import { Notification } from "../home/NotificationBox"
 // import {IndividualIntervalsExample} from "../home/BootstrapCarousel"
 
@@ -20,6 +21,7 @@ export const ApplicationViews = () => {
                     <Outlet />
                 </>
             }>
+                <Route path="/" element={ <Home /> } />
                 {/* <Route path="/" element={ <Notification /> } />  */}
                 {/* <Route path="/" element={ <IndividualIntervalsExample /> } /> */}
                 <Route path="postings/" element={ <PostingsList /> } />

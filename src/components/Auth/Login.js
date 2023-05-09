@@ -5,7 +5,7 @@ import { Button, Form} from "react-bootstrap";
 import "./Login.css"
 
 export const Login = () => {
-    const [email, set] = useState("sergeantduck5@disney.org")
+    const [email, set] = useState("donaldduck5@quackery.com")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -28,7 +28,7 @@ export const Login = () => {
             })
     }
 
-    return (< main className="loginContainer" style={{backgroundColor: "#f2ffe8", paddingTop: "8%", paddingBottom: "35%"}}>
+    return (< main className="loginContainer" style={{backgroundColor: "#f2ffe8", paddingTop: "6%", paddingBottom: "35%"}}>
             <div id="pictureframe">
                 <div id="bird">
                     <div id="body2"></div>

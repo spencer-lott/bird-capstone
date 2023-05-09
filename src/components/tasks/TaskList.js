@@ -71,7 +71,8 @@ export const TaskList = () => {
                       <Button style={{
                                 transition: "all 0.3s ease-out",
                                 backgroundColor: "#355e3b",
-                                border: "solid #39545f 0.5px"
+                                border: "solid #39545f 0.5px",
+                                opacity: "0.9"
                                 }} 
                               onClick={() => navigate("/tasks/create")}>Add bird to watch list</Button >
                     </div>
@@ -85,7 +86,8 @@ export const TaskList = () => {
                       <Accordion style={{backgroundColor: "darkGray"}}>
                         <Accordion.Item eventKey="0" >
                             <Accordion.Header >Completed Watchlist</Accordion.Header>
-                            <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>                    
+                            <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>
+                              <Button>Clear all</Button>                    
                                 {filteredCompleteTasks.map((task) => (
                                   <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
                                   ))}

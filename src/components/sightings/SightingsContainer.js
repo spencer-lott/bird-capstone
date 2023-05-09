@@ -26,7 +26,8 @@ export const SightingsContainer = () => {
                     <Button style={{padding: "1.5em",
                                     transition: "all 0.3s ease-out",
                                     backgroundColor: "#355e3b",
-                                    border: "solid #39545f 0.5px"}} 
+                                    border: "solid #39545f 0.5px",
+                                    opacity: "0.9"}} 
                             onClick={() => navigate("/sightings/create")}>Create New Sighting</Button>
                 </div>
             </section>

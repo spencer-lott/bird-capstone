@@ -12,7 +12,7 @@ import { Notification } from "../home/NotificationBox";
 export const BootstrapNav = () => {
   const navigate = useNavigate()
   return (
-    <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{position: "fixed", top: "0", left: "0", width: "100%"}}>
+    <Navbar className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "3"}}>
       <Container>
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
