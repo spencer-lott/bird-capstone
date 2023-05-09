@@ -54,12 +54,13 @@
     display: flex;
     justify-content: center;
     margin: 4px;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .post-description{
     display: flex;
     justify-content: center;
+    padding: 4px;
 }
 
 .post-footer{

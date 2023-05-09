@@ -12,6 +12,7 @@ export const PostingsForm = () => {
     const [posting, update] = useState({
         description: "",
         date: "",
+        image: ""
 
     })
 
@@ -21,6 +22,7 @@ export const PostingsForm = () => {
     const postingToSendToAPI = {
         userId: birdUserObject.id,
         description: posting.description,
+        image: posting.image,
         date: new Date().toISOString().split('T')[0]
     }
 

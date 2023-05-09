@@ -1,5 +1,4 @@
 
-
 .notifiedLink { 
     position:relative;
     text-decoration: none;
@@ -21,3 +20,92 @@
 }
 
 .redBubble {background:rgb(184, 31, 31);}
+
+
+
+.homeWholeContainer{
+	/* background-color: #355e3b; */
+	padding-bottom: 100%;
+
+	
+
+}
+
+.homeContainer{
+	/* border: dotted blue; */
+	margin-left: 15%;
+    margin-right: 15%;
+	padding-top: 7.5%;
+    display: flex;
+    flex-direction: row; 
+	justify-content: space-between;
+	padding-bottom: 100%;
+	padding-left: 2%;
+	padding-right: 2%;
+	
+}
+
+
+.homeCol1{
+	padding-bottom: 5%;
+	background-color: whitesmoke;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+	padding-top: 1.5%;
+	border-color: solid lightgray;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.9;
+	box-shadow: 0px 12px 15px -6px rgba(0,0,0.3);
+	
+}
+
+.about{
+	padding-left: 7%;
+	padding-right: 4%;
+	padding-bottom: 4%;
+}
+
+.homeCol2{
+	/* border: dotted darkolivegreen; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 1%;
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+.homeCol3{
+	border: dotted lime;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 5%;
+	padding-top: 5%;
+}
+
+.homeCol4{
+	border: dotted red;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	padding-left: 5%;
+}
+
+.carouselHeaders{
+	cursor: pointer;
+}
+
+.socialMedia{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.icons{
+	padding-left: 5px;
+}
