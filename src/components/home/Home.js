@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import "./Home.css"
-import { Carousel, OverlayTrigger, Tooltip } from "react-bootstrap"
+import { Button, Carousel, Overlay, OverlayTrigger, Tooltip, Popover } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 
@@ -29,6 +29,45 @@ export const Home = () => {
         [sightings]
     )
 
+    const PopoverBottom = () => {
+            const [show, setShow] = useState(false);
+            const [target, setTarget] = useState(null);
+            const ref = useRef(null);
+          
+            const handleClick = (event) => {
+              setShow(!show);
+              setTarget(event.target);
+            };
+          
+            return (
+              <div ref={ref}>
+                <Button 
+                onClick={handleClick}
+                style={{
+                    marginLeft: "25px",
+                    transition: "all 0.3s ease-out",
+                    backgroundColor: "transparent",
+                    color: "black",
+                    border: "solid #39545f 0.5px"}}>
+                Not sure where to start?
+                </Button>
+          
+                <Overlay
+                  show={show}
+                  target={target}
+                  placement="bottom"
+                  container={ref}
+                  containerPadding={20}
+                >
+                  <Popover id="popover-contained">
+                    <Popover.Body>
+                        Start by adding birds you want to see to your <a href="/tasks">Watchlist</a> OR if you have a bird you've seen, log it in <a href="/sightings">Sightings</a>
+                    </Popover.Body>
+                  </Popover>
+                </Overlay>
+              </div>
+            );
+          }
 
 
     const ControlledCarousel = () => {
@@ -111,10 +150,9 @@ export const Home = () => {
                     <div className="about">
                         We love birds. They sing songs, fly majestically in the sky, eat our spiders, and much more. Life wouldn't be the same without them. One reason this app exists is so that individuals can stop buying notebooks. Paper comes from trees, and birds live in trees. We do our best so that trees don't need torn down. 
                     </div>
-                    <footer style={{fontStyle:"italic",
-                                    display: "flex",
-                                    justifyContent: "flexEnd",
-                                    marginRight: "2%"}}>-Bird Bud Team</footer>
+                    <footer className="introFooter">-Bird Bud Team
+                    {PopoverBottom()}
+                    </footer>
                 </section>
 
                 <section className="homeCol2">
@@ -174,3 +212,5 @@ export const Home = () => {
     )
 
 }
+
+

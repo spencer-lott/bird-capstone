@@ -97,7 +97,6 @@ return (
             >
                     <input className="tasksInput" type="checkbox" onChange={handleCheckboxChange} value={isChecked}  checked={isChecked} />
                     {task.description}
-                
                     {
                         deleteButton()
                     }

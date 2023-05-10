@@ -28,6 +28,10 @@ export const BootstrapNav = () => {
                 Audubon
               </NavDropdown.Item>
               <NavDropdown.Item href="https://www.birdlife.org/">BirdLife International</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="https://wvdnr.gov/wp-content/uploads/2022/12/Birds-of-WV-FINAL-113022.pdf">
+                WVDNR Checklist
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
