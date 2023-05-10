@@ -9,6 +9,7 @@ export const SightingsList = ({ searchTermState }) => {
     const navigate = useNavigate()
     const [sightings, setSightings] = useState([])
     const [filteredSightings, setFiltered] = useState([])
+    const [birdCount, setBirdCount] = useState([])
 
     const localBirdUser = localStorage.getItem("bird_user")
     const birdUserObject = JSON.parse(localBirdUser)
@@ -40,6 +41,13 @@ export const SightingsList = ({ searchTermState }) => {
         [sightings]
     )
 
+    useEffect(
+        () => {
+            const number = sightings.filter(sighting => sighting.userId === birdUserObject.id)
+                setBirdCount(number)
+        },
+        [sightings]
+    )
 
 return <>
         <OverlayTrigger
@@ -47,7 +55,8 @@ return <>
         overlay={<Tooltip>Total Bird Count</Tooltip>}
         >
         <article className="birdCount">
-            <section className="countNumber">{filteredSightings.length}</section>
+            <section className="countNumber">{birdCount.length}</section>
+            <p style={{fontStyle: "italic"}}>(Double click to edit any of your sightings!)</p>
         </article>
         </OverlayTrigger>
 

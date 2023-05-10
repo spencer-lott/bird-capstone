@@ -16,7 +16,6 @@ export const SightingsContainer = () => {
             <main className="sightingsMainContainer">
             <article className="sightingsTop">
                 <h1 className="sightingsHeader">Sightings</h1>  
-                <p style={{fontStyle: "italic"}}>(Double click to edit any of your sightings!)</p>
             </article>
 
             <section className="sightingsSearch">

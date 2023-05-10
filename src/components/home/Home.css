@@ -32,7 +32,6 @@
 }
 
 .homeContainer{
-	/* border: dotted blue; */
 	margin-left: 15%;
     margin-right: 15%;
 	padding-top: 7.5%;
@@ -65,8 +64,15 @@
 	padding-bottom: 4%;
 }
 
+.introFooter{
+	font-style: italic;
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	margin-right: 2%;
+}
+
 .homeCol2{
-	/* border: dotted darkolivegreen; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -82,25 +88,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.homeCol3{
-	border: dotted lime;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding-bottom: 5%;
-	padding-top: 5%;
-}
-
-.homeCol4{
-	border: dotted red;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	padding-bottom: 5%;
-	padding-top: 5%;
-	padding-left: 5%;
 }
 
 .carouselHeaders{
