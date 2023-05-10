@@ -61,7 +61,7 @@ export const Home = () => {
                 >
                   <Popover id="popover-contained">
                     <Popover.Body>
-                        Start by adding birds you want to see to your <a href="/tasks">Watchlist</a> OR if you have a bird you've seen, log it in <a href="/sightings">Sightings</a>
+                        Start by adding birds you want to see to your <a href="/tasks">Watchlist</a> OR if you have a bird you've seen, log it in <a href="/sightings">Sightings!</a>
                     </Popover.Body>
                   </Popover>
                 </Overlay>
