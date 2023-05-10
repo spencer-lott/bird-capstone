@@ -4,6 +4,7 @@ import { SightingsList } from "../sightings/SightingsList"
 import "./Sightings.css"
 import { useNavigate } from "react-router-dom"
 import { Button } from "react-bootstrap"
+import { SightingsTable } from "./SightingsTable"
 
 export const SightingsContainer = () => {
 
@@ -31,6 +32,7 @@ export const SightingsContainer = () => {
                 </div>
             </section>
 
+                    <SightingsTable />
                     <SightingsList searchTermState={searchTerms}/>
                 </main>
         </article>  
