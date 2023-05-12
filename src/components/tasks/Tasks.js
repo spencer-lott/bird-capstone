@@ -1,21 +1,19 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import { InlineEdit } from "./TaskInlineEdit"
 import { Button, OverlayTrigger, Tooltip } from "react-bootstrap"
 
-
-
+//This function is responsible for the contents of each individual task that gets put into the TaskList
 export const Tasks = ( {task, updateTasks} ) => {
 
     const [isChecked, setIsChecked] = useState(task.completed)
     const [showEdit, setShowEdit] = useState(false)
 
-    //All of this that comes before the return changes the completed status of your tasks
+    //When an incomplete task is checked. We change state to a completed task. It then alerts the user to do an action. If a task is already complete and the user checks the box again, it becomes an incomplete task again. It also automatically changes priority incomplete task values to false.
     useEffect(() => {
         setIsChecked(task.completed)
       }, [task.completed])
 
-    const handleCheckboxChange = (event) => {
+    const handleCheckboxChange = () => {
 
         const completed = !isChecked
        
@@ -45,28 +43,28 @@ export const Tasks = ( {task, updateTasks} ) => {
             .then(()=> setShowEdit(false) )
 }
 
+    //This is another delete button that is similar to my other delete buttons except for the fact that the delete button only shows on tasks that are completed
+    const deleteButton = () => {
+        if (task.completed === true) {
+            return <>
+            <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Delete</Tooltip>}
+            >
+            <Button 
+            style={{backgroundColor: "transparent",
+                    border: "none"}}
+            className="ticket__delete"
+            onClick={() => {
 
-const deleteButton = () => {
-    if (task.completed === true) {
-        return <>
-        <OverlayTrigger
-        placement="top"
-        overlay={<Tooltip>Delete</Tooltip>}
-        >
-        <Button 
-        style={{backgroundColor: "transparent",
-                border: "none"}}
-        className="ticket__delete"
-        onClick={() => {
-
-            fetch(`http://localhost:8088/tasks/${task.id}`, {
-                method: "DELETE"
-              })
-                .then(() => fetch(`http://localhost:8088/tasks`))
-                .then(response => response.json())
-                .then(returnedTasks => updateTasks(returnedTasks))
-        
-        }}
+                fetch(`http://localhost:8088/tasks/${task.id}`, {
+                    method: "DELETE"
+                })
+                    .then(() => fetch(`http://localhost:8088/tasks`))
+                    .then(response => response.json())
+                    .then(returnedTasks => updateTasks(returnedTasks))
+            
+            }}
             ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" className="bi bi-trash" viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
@@ -77,10 +75,9 @@ const deleteButton = () => {
     else {
         return ""
     }
-
     
 }
-
+    //We have inline edit here. If a task needs modified it can be double clicked and it will display the inline edit form where the task is.
 return (
         !showEdit ?   
         <>

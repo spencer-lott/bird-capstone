@@ -2,51 +2,45 @@ import { useState } from "react"
 import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
-export const SightingsForm = ({updateTasks}) => {
-
+//This is the form for when the user clicks on the "add new sighting" button. The user will then be directed to another page where they will have the ability to fill in various input fields. They also have to option to close out the form, taking them back to the original sighting page.
+export const SightingsForm = () => {
+    const navigate = useNavigate()
     const [sighting, update] = useState({
         species: "",
         description: "",
         dateSeen: "",
         location: "",
         image: ""
-
     })
-
-    const navigate = useNavigate()
 
     const localBirdUser = localStorage.getItem("bird_user")
     const birdUserObject = JSON.parse(localBirdUser)
 
+    //This function saves the new inputs from the user to the database using a POST
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
+        const sightingToSendToAPI = {
+            userId: birdUserObject.id,
+            species: sighting.species,
+            description: sighting.description,
+            dateSeen: sighting.dateSeen,
+            location: sighting.location,
+            image: sighting.image
+        }
 
-    const sightingToSendToAPI = {
-        userId: birdUserObject.id,
-        species: sighting.species,
-        description: sighting.description,
-        dateSeen: sighting.dateSeen,
-        location: sighting.location,
-        image: sighting.image
-
+            fetch(`http://localhost:8088/sightings`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(sightingToSendToAPI)
+        })
+                .then(response => response.json())
+                .then(() => {
+                    navigate("/sightings")
+                })
     }
-
-        fetch(`http://localhost:8088/sightings`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sightingToSendToAPI)
-    })
-   
-            .then(response => response.json())
-            .then(() => {
-                navigate("/sightings")
-            })
-    }
-
-
 
     return (
         <div className="sightingFormContainer" style={{backgroundColor: "#f2ffe8"}}>

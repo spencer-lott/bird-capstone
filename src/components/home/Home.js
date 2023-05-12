@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from "react"
-import "./Home.css"
-import { Button, Carousel, Overlay, OverlayTrigger, Tooltip, Popover } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { Button, Carousel, Overlay, OverlayTrigger, Tooltip, Popover } from "react-bootstrap"
+import "./Home.css"
 
-
-
+//The Home function displays everything on the home page
 export const Home = () => {
     const navigate = useNavigate()
     const [sightings, setSightings] = useState([])
@@ -13,6 +12,7 @@ export const Home = () => {
     const localBirdUser = localStorage.getItem("bird_user")
     const birdUserObject = JSON.parse(localBirdUser)
 
+    //Fetching all the sightings. This is necessary to give us the total bird count for the user, which is the amount of sightings for that individual.
     useEffect(() => {
         fetch(`http://localhost:8088/sightings`)
         .then(response => response.json())
@@ -23,12 +23,13 @@ export const Home = () => {
 
     useEffect(
         () => {
-            const personalSightings = sightings.filter(sighting => sighting.userId === birdUserObject.id).sort((a, b) => new Date(b.dateSeen) - new Date(a.dateSeen))
+            const personalSightings = sightings.filter(sighting => sighting.userId === birdUserObject.id)
                 setFiltered(personalSightings)
         },
         [sightings]
     )
 
+    //This function is for the Popover button feature. It mostly comes from the ReactBootstrap Website. I modified it to do what I wanted it to do in my code.
     const PopoverBottom = () => {
             const [show, setShow] = useState(false);
             const [target, setTarget] = useState(null);
@@ -69,13 +70,12 @@ export const Home = () => {
             );
           }
 
-
+    //This function is the carousel on the home page. It mostly comes from the ReactBootstrap Website. I modified it to do what I wanted it to do in my code.
     const ControlledCarousel = () => {
         const [index, setIndex] = useState(0);
       
         const handleSelect = (selectedIndex, e) => {
           setIndex(selectedIndex);}
-
 
                 return(<>
 

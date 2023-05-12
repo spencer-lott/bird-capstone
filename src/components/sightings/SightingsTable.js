@@ -1,9 +1,8 @@
 
-export const SightingsTable = ({sightingTableProp, updateTableSightings}) => {
+//This function is what displays as the contents for the reactBootStrap table
+export const SightingsTable = ({sightingTableProp}) => {
 
     return(
-
-
       <tbody>
         <tr>
           <td>{sightingTableProp?.species}</td>
@@ -11,10 +10,6 @@ export const SightingsTable = ({sightingTableProp, updateTableSightings}) => {
           <td>{sightingTableProp?.description}</td>
           <td>{sightingTableProp?.location}</td>
         </tr>
-
       </tbody>
-    
-
-
     )
 }

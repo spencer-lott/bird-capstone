@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import "./Postings.css"
 import { Button } from "react-bootstrap"
 
+//This is the form for the user when they click the button to create a new post. It consists of three inputs. Date, image, description.
 export const PostingsForm = () => {
     const navigate = useNavigate()
 
@@ -16,9 +17,10 @@ export const PostingsForm = () => {
 
     })
 
+    //This is the function for when the user submits the form, it will add these things to the database, then it takes the user back to the community page
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-
+    
     const postingToSendToAPI = {
         userId: birdUserObject.id,
         description: posting.description,

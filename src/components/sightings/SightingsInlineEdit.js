@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Button } from "react-bootstrap"
 
+//This function is much like the sighting form except that it is for the inline edit when a user would like to edit their own posts. It also includes an option to delete.
 export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}) => {
     const [sighting, setSighting] = useState({
         userId: sightingProp.userId,
@@ -11,9 +12,6 @@ export const SightingsInlineEdit = ({sightingProp, updateSightings, setShowEdit}
         image: sightingProp.image
 
     })
-
-
-
 
         const handleSaveButtonClick = (event) => {
             event.preventDefault()

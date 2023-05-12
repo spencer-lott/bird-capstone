@@ -9,12 +9,6 @@
     margin-right: 10%;
 }
 
-/* .task-page{
-    padding-top: 3em;
-    display: flex;
-    flex-direction: column;
-} */
-
 .task-top{
     padding-top: 2em;
     padding-bottom: 1em;
@@ -35,7 +29,6 @@
 
 .incomplete-tasks{
     width: 40%;
-
 }
 
 .incomplete-tasks-header{
@@ -56,8 +49,6 @@
     padding: .75em;
     border-radius:  10px 10px 10px 10px;
     font-size: 18px;
-
-
 }
 
 .tasksInput{

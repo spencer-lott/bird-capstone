@@ -1,8 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
 import { Button, Form } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import "./Login.css"
 
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
