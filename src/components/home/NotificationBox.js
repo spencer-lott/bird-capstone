@@ -2,6 +2,7 @@ import "./Home.css"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+//This is the function for the red bubble on the watchlist link in the navbar.
 export const Notification = () => {
 
         const localBirdUser = localStorage.getItem("bird_user")

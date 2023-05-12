@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Button } from "react-bootstrap"
 
+//This function is much like the task form except that it is for the inline edit when a user would like to edit their own tasks. It also includes an option to delete.
 export const InlineEdit = ({taskProp, updateTasks, setShowEdit}) => {
     const [task, setTask] = useState({
         userId: taskProp.userId,

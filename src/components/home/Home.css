@@ -5,6 +5,7 @@
     color: inherit;
 }
 
+/* The styling for the red notification bubble came mostly from CodePen. I had to tweak it to make it work for my app. */
 .box-notify { 
 	color:#fff; 
 	text-shadow:1px 1px 0px rgba(0,0,0,0.25); 
@@ -15,8 +16,6 @@
 	position:absolute;
 	top:-.8em;
 	right:-1em;
-    /* font-size: 14px; */
-
 }
 
 .redBubble {background:rgb(184, 31, 31);}
@@ -24,11 +23,7 @@
 
 
 .homeWholeContainer{
-	/* background-color: #355e3b; */
-	padding-bottom: 100%;
-
-	
-
+	padding-bottom: 100%;	
 }
 
 .homeContainer{
@@ -41,9 +36,7 @@
 	padding-bottom: 100%;
 	padding-left: 2%;
 	padding-right: 2%;
-	
 }
-
 
 .homeCol1{
 	padding-bottom: 5%;
@@ -80,7 +73,6 @@
 	padding-top: 3%;
 	padding-left: 10%;
 	padding-right: 5%;
-
 }
 
 .homeBirdCount{

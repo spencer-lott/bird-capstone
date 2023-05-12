@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react"
-import { TaskList } from "./TaskList"
+// import { useEffect, useState } from "react"
+// import { TaskList } from "./TaskList"
 
 
 
-export const TaskContainer = () => {
+// export const TaskContainer = () => {
 
-    const [tasks, setTasks] = useState([])
-
-
-    // useEffect(()=>{
-    //   fetch(`http://localhost:8088/tasks`)
-    //   .then(r => r.json())
-    //   .then(returnedTasks => setTasks(returnedTasks))
-    // },[])
+//     const [tasks, setTasks] = useState([])
 
 
-    return (
-        <>
-            {/* <TaskForm  updateTasks={setTasks}/> */}
-            <TaskList tacos={tasks} updateTasks={setTasks} />
-        </>
-    )
-}
+//     // useEffect(()=>{
+//     //   fetch(`http://localhost:8088/tasks`)
+//     //   .then(r => r.json())
+//     //   .then(returnedTasks => setTasks(returnedTasks))
+//     // },[])
+
+
+//     return (
+//         <>
+//             {/* <TaskForm  updateTasks={setTasks}/> */}
+//             <TaskList tacos={tasks} updateTasks={setTasks} />
+//         </>
+//     )
+// }

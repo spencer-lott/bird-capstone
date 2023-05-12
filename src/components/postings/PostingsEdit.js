@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import "./Postings.css"
 import { Button } from "react-bootstrap"
 
+//This function is much like the post form except that it is for the inline edit when a user would like to edit their own posts. It also includes an option to delete.
 export const PostingsEdit = ({postingProp, updatePostings, setShowEdit}) => {
     const [posting, setPosting] = useState({
         userId: postingProp.userId,

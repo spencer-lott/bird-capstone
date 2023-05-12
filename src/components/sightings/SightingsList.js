@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react"
 import { Sightings } from "./Sightings"
-import { useNavigate } from "react-router-dom"
+import { SightingsTable } from "./SightingsTable"
 import { OverlayTrigger, Tooltip, Table, Button } from "react-bootstrap"
 import "./Sightings.css"
-import { SightingsTable } from "./SightingsTable"
 
-
+//This function's purpose is to display all the sightings on one page
 export const SightingsList = ({ searchTermState }) => {
-    const navigate = useNavigate()
     const [sightings, setSightings] = useState([])
     const [filteredSightings, setFiltered] = useState([])
     const [birdCount, setBirdCount] = useState([])
@@ -16,6 +14,7 @@ export const SightingsList = ({ searchTermState }) => {
     const localBirdUser = localStorage.getItem("bird_user")
     const birdUserObject = JSON.parse(localBirdUser)
 
+    //Observing state of the sightings. We filter for the sightings of the user, then filter by species. It will only pull up species that start with that letter. They can be uppercase or lowercase
     useEffect(() => {
         const searchedSightings = sightings.filter(sighting => sighting.userId === birdUserObject.id).filter(sighting => {
             return sighting.species.toLowerCase().startsWith(searchTermState.toLowerCase())
@@ -34,7 +33,7 @@ export const SightingsList = ({ searchTermState }) => {
         })
     }, [])
 
-    //Filters the tasks and displays the ones for that user
+    //Filters the tasks and displays the ones for that user and displays the most recent sighting at the very top
     useEffect(
         () => {
             const personalSightings = sightings.filter(sighting => sighting.userId === birdUserObject.id).sort((a, b) => new Date(b.dateSeen) - new Date(a.dateSeen))
@@ -43,6 +42,7 @@ export const SightingsList = ({ searchTermState }) => {
         [sightings]
     )
 
+    //Filters all sightings, giving only the ones for the user specifically
     useEffect(
         () => {
             const number = sightings.filter(sighting => sighting.userId === birdUserObject.id)
@@ -51,6 +51,7 @@ export const SightingsList = ({ searchTermState }) => {
         [sightings]
     )
 
+    //This function switches the user from picture view to a table view. If the button is pressed again, then it will show the icons. It basically hides one and shows the other onclick.
     const SwitchView = () => {
         setShowTable(!showTable)
     }
@@ -64,7 +65,7 @@ return <>
             <section className="countNumber">{birdCount.length}</section>
             </OverlayTrigger>
             <p style={{fontStyle: "italic",
-        fontWeight: "bold"}}>(Double click an image edit any of your sightings!)</p>
+        fontWeight: "bold"}}>(Double click an image to edit any of your sightings!)</p>
         </article>
 
     {showTable ?

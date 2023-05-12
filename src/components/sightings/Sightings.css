@@ -7,7 +7,6 @@
     z-index: -1;
 }
 
-
 img {
     height: 300px;
 }
@@ -85,15 +84,6 @@ img {
     overflow: hidden;
 }
 
-/* Original */
-/* .individualSightingsCards {
-    margin: 20px;
-    display: flex;
-    box-shadow: 0px 12px 18px -6px rgba(0,0,0.3);
-    overflow: hidden;
-    border-radius:  20px 20px 20px 20px;
-} */
-
 .sightingLocation {
     text-align: end;
 }
@@ -101,10 +91,7 @@ img {
     font-style: italic;
 }
 
-
-
-
-/* This is all for the fancy images */
+/* This is all for the fancy hover images. I found most of this code on CodePen, but tweaked it for myself */
 
 .hoverImageContainer {
 	max-width: 700px;

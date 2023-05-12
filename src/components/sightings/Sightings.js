@@ -2,9 +2,11 @@ import { useState } from "react"
 import { SightingsInlineEdit } from "./SightingsInlineEdit"
 import "./Sightings.css"
 
+//This function is what makes up each individual sighting icon
 export const Sightings = ({sightingProp, updateSightings}) => {
     const [showEdit, setShowEdit] = useState(false)
-
+    
+    //This function is necessary to keep the image outline and formatting for when a user uploads an image with a bad URL. It also has inline edit which the user can use by double clicking the icon to edit their sighting
     const BrokenImage = () => {
         return 
     }
@@ -22,7 +24,7 @@ export const Sightings = ({sightingProp, updateSightings}) => {
             {
                 sightingProp.image === ""
                 ?
-                    <img src = "https://preview.redd.it/childhood-cartoons-roundup-road-runner-wile-e-coyote-v0-4nim8d03x4d91.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=d415635e6f4443c4538179ff93618696f1b3c645" alt={"url doesn't work"}/>
+                    <img src="https://preview.redd.it/childhood-cartoons-roundup-road-runner-wile-e-coyote-v0-4nim8d03x4d91.jpg?width=1080&crop=smart&auto=webp&v=enabled&s=d415635e6f4443c4538179ff93618696f1b3c645" alt={"url doesn't work"}/>
                     :
                     <>
                     <img style={{color: "black", fontWeight: "bold", backgroundSize: "200px"}} src={sightingProp.image} alt={BrokenImage()} onError={() => alert("Failed to load image! Please upload a functioning URL.")}/>
@@ -36,13 +38,12 @@ export const Sightings = ({sightingProp, updateSightings}) => {
                                 <p style={{fontStyle:"italic"}}>{sightingProp.location}</p>
                             </div>
                         </div>
-                </div>
+            </div>
 
             </div>
         </section>
         </article>
         </>
-
                 :
                 < SightingsInlineEdit sightingProp={sightingProp} updateSightings={updateSightings} setShowEdit={setShowEdit}/>
     )

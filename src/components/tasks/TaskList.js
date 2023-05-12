@@ -1,30 +1,28 @@
 import { useEffect, useState } from "react"
-import { Tasks } from "./Tasks"
 import { useNavigate } from "react-router-dom"
+import { Tasks } from "./Tasks"
+import { Button, Accordion } from "react-bootstrap"
 import "./Tasks.css"
-import { Button } from "react-bootstrap"
-import { Accordion } from "react-bootstrap"
 
-
+//This function's purpose is to display all the tasks on one page
 export const TaskList = () => {
+  const navigate = useNavigate()
+  const [tasks, setTasks] = useState([])
+
   const [filteredIncompleteTasks, setFilteredIncompleteTasks] = useState([])
   const [filteredCompleteTasks, setFilteredCompleteTasks] = useState([])
-  const [showEdit, setShowEdit] = useState(false)
-
-  const navigate = useNavigate()
 
   const localBirdUser = localStorage.getItem("bird_user")
   const birdUserObject = JSON.parse(localBirdUser)
 
-  const [tasks, setTasks] = useState([])
-
+  //Fetching all tasks from the database
   useEffect(()=>{
     fetch(`http://localhost:8088/tasks`)
     .then(r => r.json())
     .then(returnedTasks => setTasks(returnedTasks))
   },[])
 
-
+  //This observes tasks and sets them to two different states. If the user's incomplete task is a priority, it goes on top, if not it goes below it. The completed tasks got to a different container
   useEffect(() => {
     const personalIncompleteTasks = tasks.filter(task => task.userId === birdUserObject.id && task.completed === false).sort((a, b) => b.priority - a.priority)
     setFilteredIncompleteTasks(personalIncompleteTasks)
@@ -32,23 +30,6 @@ export const TaskList = () => {
     const personalCompleteTasks = tasks.filter(task => task.userId === birdUserObject.id && task.completed === true)
     setFilteredCompleteTasks(personalCompleteTasks)
   }, [tasks])
-
-
-
-
-  // const DeleteAllCompletedTasks = () => {
-
-  //   fetch(`http://localhost:8088/users?_embed=tasks${birdUserObject?.tasks?.id}`, {
-  //     method: "DELETE"
-  //   })
-  //     .then(() => fetch(`http://localhost:8088/tasks`))
-  //     .then(response => response.json())
-  //     .then(returnedTasks => setTasks(returnedTasks))
-  //     .then(() => setShowEdit(false))
-      
-  // }
-
-
 
   return (
     <>
@@ -85,13 +66,6 @@ export const TaskList = () => {
                         <Accordion.Item eventKey="0" >
                             <Accordion.Header >Completed Watchlist</Accordion.Header>
                             <Accordion.Body style={{backgroundColor: "#355e3b", color: "#355e3b" }}>
-                              {/* <Button variant="danger"
-                                      onClick={DeleteAllCompletedTasks} 
-                              style={{marginBottom: "5px",
-                                      transition: "all 0.3s ease-out",
-                                      border: "solid #39545f 0.5px",
-                                      backgroundColor: "red"
-                            }}>Clear all</Button>                     */}
                                 {filteredCompleteTasks.map((task) => (
                                   <Tasks key={task.id} task={task} updateTasks={setTasks} /> 
                                   ))}

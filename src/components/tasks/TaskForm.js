@@ -2,33 +2,27 @@ import { useState } from "react"
 import { Button } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
+//This is the form for when the user clicks on the "add bird" button. The user will then be directed to another page where they will have the ability to fill in various input fields. They also have to option to close out the form, taking them back to the original sighting page.
 export const TaskForm = () => {
-
+    const navigate = useNavigate()
     const [task, update] = useState({
         description: "",
         priority: false
-        // finishDate: ""
-
     })
-
-    const navigate = useNavigate()
 
     const localBirdUser = localStorage.getItem("bird_user")
     const birdUserObject = JSON.parse(localBirdUser)
 
+    //This function saves the new inputs from the user to the database using a POST
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-
 
     const taskToSendToAPI = {
         userId: birdUserObject.id,
         description: task.description,
         priority: Boolean(task.priority),
         completed: false,
-        // finishDate: task.finishDate
-
     }
-
         fetch(`http://localhost:8088/tasks`, {
         method: "POST",
         headers: {
@@ -36,14 +30,11 @@ export const TaskForm = () => {
         },
         body: JSON.stringify(taskToSendToAPI)
     })
-   
             .then(response => response.json())
             .then(() => {
                 navigate("/tasks")
             })
     }
-
-
 
     return (
         <div className="taskFormContainer" style={{backgroundColor: "#f2ffe8"}}>
